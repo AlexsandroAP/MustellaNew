@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('dashboard', compact('posts'));
     }
 
     /**
@@ -20,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('postagem');
     }
 
     /**
@@ -28,8 +29,27 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'caption' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $imagePath = $request->file('image')->store('images', 'public');
+
+            Post::create([
+                'title' => $request->title,
+                'caption' => $request->caption,
+                'image_path' => $imagePath,
+            ]);
+
+            return redirect()->route('dashboard')->with('success', 'Post created successfully.');
+        } else {
+            return back()->withErrors(['image' => 'Image upload failed.']);
+        }
     }
+
 
     /**
      * Display the specified resource.

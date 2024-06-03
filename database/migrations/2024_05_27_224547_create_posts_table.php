@@ -9,19 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('caption');
+            $table->string('image_path');
             $table->timestamps();
-            $table-> string('title');
-            $table-> text('subtitle');
-            $table-> string('file_name');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-
         });
     }
-
     /**
      * Reverse the migrations.
      */

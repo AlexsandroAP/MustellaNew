@@ -8,7 +8,7 @@
                     <img class="w-10 h-10" src="{{ asset('imagens/lock.png') }}" alt="Lupa">
                 </button>
 
-                <a href="{{route('dashboard')}}">
+                <a href="{{route('mustella')}}">
                     <button class="rounded-r-full ml-20">
                         <img class="w-10 h-10" src="{{ asset('imagens/home.png') }}" alt="Home">
                     </button>

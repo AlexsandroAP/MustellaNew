@@ -25,7 +25,7 @@
     <h1 class="text-4xl font-bold text-white mb-4">Bem-vindo de volta {{ Auth::user()->name }}!<h1>
     <p class="text-xl text-white mb-8">Estamos muito felizes em tê-lo aqui. Explore nosso site.</p>
 
-    <a href="{{ route('dashboard') }}">
+    <a href="{{ route('mustella') }}">
         <x-primary-button>
             {{ __('Entrar Novamente') }}
         </x-primary-button>
@@ -41,7 +41,7 @@
                 @if (Route::has('login'))
 
                     @auth
-                        <a href="{{ url('/dashboard') }}"> Dashboard </a>
+                        <a href="{{ url('/mustella') }}"> mustella </a>
 
                 @else
                     <a href="{{ route('login') }}">

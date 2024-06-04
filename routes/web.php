@@ -23,7 +23,7 @@ Route::get('/confirmarPost', function () {
 })->middleware(['auth'])->name('confirmarPost');
 
 Route::get('/enviarPost', function () {
-    return view('dashboard');
+    return view('mustella-index');
 })->middleware(['auth'])->name('enviarPost');
 
 Route::middleware('auth')->group(function () {

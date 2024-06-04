@@ -25,15 +25,15 @@
     <h1 class="text-4xl font-bold text-white mb-4">Bem-vindo de volta {{ Auth::user()->name }}!<h1>
     <p class="text-xl text-white mb-8">Estamos muito felizes em tê-lo aqui. Explore nosso site.</p>
 
-    <a href="{{ route('dashboard') }}">
+    <a href="{{ route('mustella') }}">
         <x-primary-button>
             {{ __('Entrar Novamente') }}
         </x-primary-button>
     </a>
 
 @else
-    <p class="text-orange flex justify-center items-center text-4xl font-bold">Olá!</p>
-            <p class="text-basic-gray text-xl mb-6 ">Bem vindo(a) ao Mustela sua plataforma de estudos.</p>
+    <p class="mb-6 text-orange flex justify-center items-center text-4xl font-bold">Olá!</p>
+            <p class="text-basic-gray text-xl mx-7 mb-6 ">Bem vindo(a) ao Mustela sua plataforma de estudos.</p>
 
             <div>
                 <x-application-icon />

@@ -1,15 +1,16 @@
 <x-app-layout>
-    <div class="py-12 text-white mt-20 mb-20">
+    <div class="py-12 text-white mt-20">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="mb-4 md:mb-0 mx-10 md:mx-20 md:text-4xl text-3xl md:flex md:w-1/3">
                 <h1>Poste Seus Conteúdos</h1>
             </div>
-            <div class="md:flex bg-high-purplle shadow-sm mx-10 md:mx-0 p-10 items-start">
+            
+            <div class="md:flex bg-high-purplle shadow-sm mx-2 md:mx-0 p-10 items-start">
                 <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data" class="w-full">
                     @csrf
                     <div class="flex flex-col md:flex-row items-start md:space-x-4">
                         <!-- File Input -->
-                        <div class="flex items-center justify-center w-full md:w-1/3 rounded-extra-lg bg-purplle p-4">
+                        <div class="flex items-center justify-center w-full md:w-1/3 rounded-extra-lg bg-purplle px-4 py-20  md:mt-5">
                             <label for="image" class="flex flex-col items-center justify-center w-full h-48 rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
                                 <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                     <p class="mt-4 text-center text-semibold text-sm text-gray uppercase">Clique ou arraste sua imagem</p>
@@ -43,6 +44,14 @@
                                 id="caption"
                                 class="bg-purplle border-none rounded-xl placeholder-basic-gray mt-2 h-20 w-full focus:ring-0 resize-none" placeholder="Legenda"></textarea>
                             </div>
+                            <div>
+                                <label for="caption">Tags:</label>
+                                <textarea
+                                name="tags"
+                                id="tags"
+                                class="bg-purplle border-none rounded-xl placeholder-basic-gray mt-2 h-20 w-full focus:ring-0 resize-none" placeholder="Tags"></textarea>
+                            </div>
+
                         </div>
                     </div>
                     <div class="flex justify-end mt-4">

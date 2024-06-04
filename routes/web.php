@@ -8,8 +8,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('/postagem', function () {
     return view('postagem');
 })->middleware(['auth'])->name('postagem');
@@ -25,6 +23,10 @@ Route::get('/confirmarPost', function () {
 Route::get('/enviarPost', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('enviarPost');
+
+Route::get('/perfil', function () {
+    return view('perfil');
+})->middleware(['auth'])->name('perfil');
 
 Route::middleware('auth')->group(function () {
 

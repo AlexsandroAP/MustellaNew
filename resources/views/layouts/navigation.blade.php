@@ -28,13 +28,19 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6 rounded-full my-9 text-black">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center w-11 h-11 border-none text-sm leading-4 font-medium rounded-full text-gray-500 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 bg-orange">
+                        <button>
+                            <img class="w-7 h-7 m-4 min-w-8 min-h-8" src="{{ asset('imagens/menu.png') }}" alt="seta">
                         </button>
                     </x-slot>
 
                     <x-slot name="content">
+
+                        <x-dropdown-link :href="route('perfil')">
+                            {{ __('Perfil') }}
+                        </x-dropdown-link>
+
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Configurações') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -53,7 +59,8 @@
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden text-white">
-                <button @click="open = ! open" class="ml-3  justify-center p-2 text-orange hover:bg-gray-100 focus:text-gray-500 transition duration-150 inline-flex items-center w-11 h-11 border-none text-sm leading-4 font-medium rounded-full text-gray-500 hover:text-gray-700 focus:outline-none  ease-in-out bg-orange">
+                <button @click="open = ! open">
+                    <img class="w-7 h-7 m-4 min-w-8 min-h-8" src="{{ asset('imagens/menu.png') }}" alt="seta">
                 </button>
             </div>
         </div>
@@ -75,9 +82,15 @@
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
 
-            <div class="mt-3 space-y-1">
+            <div class="space-y-1">
+                <x-responsive-nav-link :href="route('perfil')">
+                {{ __('Perfil') }}
+                </x-responsive-nav-link>
+            </div>
+
+            <div class="mt-1 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('Configurações') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

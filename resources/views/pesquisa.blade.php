@@ -1,10 +1,10 @@
 <x-app-layout>
-    <div class="py-12 text-white flex justify-center items-center min-h-screen md:min-h-auto mt-10 mb-20">
+    <div class="mt-20 py-12 text-white flex md:min-h-auto">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-transparent shadow-sm">
                 <div class="container mx-auto">
 
-                    <div class="grid md:grid-cols-3 gap-4 mt-4">
+                    <div class="grid md:grid-cols-3 gap-4">
                         @foreach($posts as $post)
 
                             <div class="max-w-sm rounded overflow-hidden shadow-lg sm:m-4">

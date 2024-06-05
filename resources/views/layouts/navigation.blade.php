@@ -20,7 +20,7 @@
 
                 <button type="submit" class="flex justify-center items-center bg-orange rounded-r-full px-5">
                     <x-search-icon/>
-                 </button>
+                </button>
 
             </form>
 

@@ -11,7 +11,7 @@
                     <div class="flex flex-col md:flex-row items-start md:space-x-4">
                         <!-- File Input -->
                         <div class="flex items-center justify-center w-full md:w-1/3 rounded-extra-lg bg-purplle px-4 py-20  md:mt-5">
-                            <label for="image" class="flex flex-col items-center justify-center w-full h-48 rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
+                            <label for="image" class="flex flex-col items-center justify-center w-full h- rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
                                 <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                     <p class="mt-4 text-center text-semibold text-sm text-gray uppercase">Clique ou arraste sua imagem</p>
                                 </div>
@@ -43,13 +43,6 @@
                                 name="caption"
                                 id="caption"
                                 class="bg-purplle border-none rounded-xl placeholder-basic-gray mt-2 h-20 w-full focus:ring-0 resize-none" placeholder="Legenda"></textarea>
-                            </div>
-                            <div>
-                                <label for="caption">Tags:</label>
-                                <textarea
-                                name="tags"
-                                id="tags"
-                                class="bg-purplle border-none rounded-xl placeholder-basic-gray mt-2 h-20 w-full focus:ring-0 resize-none" placeholder="Tags"></textarea>
                             </div>
 
                         </div>

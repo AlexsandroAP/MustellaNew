@@ -18,6 +18,12 @@ class PostController extends Controller
         return view('mustella-index', compact('posts'));
     }
 
+    public function perfil()
+    {
+        $posts = Post::with('user')->get();
+        return view('perfil', compact('posts'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -41,6 +41,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
     Route::get('/mustella', [PostController::class, 'index'])->name('mustella');
 
+    Route::get('/perfil', [PostController::class, 'perfil'])->name('perfil');
+
 
 
     Route::get('/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts.search');

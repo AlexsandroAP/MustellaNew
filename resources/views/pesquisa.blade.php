@@ -1,5 +1,8 @@
 <x-app-layout>
-    <div class="mt-20 py-12 text-white flex md:min-h-auto">
+
+<x-addPost></x-addPost>
+
+    <div class="mt-20 py-12  px-8 text-white flex md:min-h-auto">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-transparent shadow-sm">
                 <div class="container mx-auto">

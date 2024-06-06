@@ -1,4 +1,7 @@
 <x-app-layout>
+
+<x-addPost></x-addPost>
+
 <div class="grid md:grid-cols-3 gap-4">
                         @foreach($posts as $post)
 

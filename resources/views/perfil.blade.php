@@ -16,54 +16,42 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased bg-high-purplle">
-        <div class="min-h-screen bg-gray-100 text-white">
+        <div class="bg-gray-100 text-white">
+            
 
             <main class="pt-10 pb-5 bg-high-purplle border-none fixed top-0 left-0 w-full z-50border-white">
+            
+            <x-addPost></x-addPost>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex md:flex-row">
 
 
-                <!-- Navigation Links -->
+                        <!-- Navigation Links -->
                         <div class="flex justify-center items-center space-x-8 sm:-my-px sm:ms-10 sm:flex text-white">
                             <x-nav-link :href="route('mustella')" :active="request()->routeIs('mustella')">
                                 <img class="w-10 h-10 min-w-10 min-h-10" src="{{ asset('imagens/seta.png') }}" alt="seta">
                             </x-nav-link>
                         </div>
 
-                        <div class="mb-3 md:ml-5rem ml-10">
-                            <div class="flex items-center">
-                                        
-                                <div class="w-6rem h-6rem bg-orange rounded-full">
+                        <div class="mb-3 md:ml-0 ml-10 flex justify-center">
+                            <div class="md:flex md:items-center ">
+                                <div class="w-6rem h-6rem ml-5rem bg-orange rounded-full">
                                     <!-- circuloPerfil -->
                                 </div>
                                 
-                                <div class="grid md:grid-cols-3 gap-4">
-                        @foreach($posts as $post)
+                                <div class="ml-3rem md:ml-4 text-bold sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0 mt-2 text-center">
+                                    <div class="sm:text-left md:text-left lg:text-left xl:text-left text-center font-bold text-2xl">{{ Auth::user()->name }}</div>
 
-                            <div class="max-w-sm rounded overflow-hidden shadow-lg sm:m-4">
-
-                                <div class="mb-3">
-                                    <div class="flex items-center">
-                                        <!-- circuloPerfil -->
-                                        <div class="w-10 h-10 bg-orange rounded-full"></div>
-
-                                        <div class="ml-2 text-white">
-                                            {{$post->user->name}}
-                                        </div>
+                                    <div class="flex">
+                                        <p class=" text-semibold text-sm text-gray ">Adicione legenda</p>
+                                        <button>
+                                            <img class="ml-2" src="{{ asset('imagens/edit.png') }}" alt="Post">
+                                    </button>
                                     </div>
-                                    <div class="font-bold text-xl mb-2 php artisan  text-white storage:link
-                                    ">{{ $post->title }}</div>
-                                    <p class=" text-base php artisan storage:link text-orange
-                                    ">{{ $post->caption }}</p>
-                                    <p class=" text-base php artisan storage:link text-orange
-                                    ">{{ $post->tags }}</p>
-
+                                    
                                 </div>
-                                <img class="w-full text-purplle rounded-xl" src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->title }}">
-                                        </div>
-                                        @endforeach
-                                    </div>
                             </div>
                         </div>
                     </div>

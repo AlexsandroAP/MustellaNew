@@ -20,8 +20,10 @@ class PostController extends Controller
 
     public function perfil()
     {
-        $posts = Post::with('user')->get();
+
+        $posts = Post::where('user_id',Auth::id())->get();
         return view('perfil', compact('posts'));
+        
     }
 
     /**

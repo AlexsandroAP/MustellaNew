@@ -27,5 +27,5 @@
                                 <img class="w-full text-purplle rounded-xl" src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->title }}">
                             </div>
                         @endforeach
-                    </div>
+</div>
 </x-app-layout>

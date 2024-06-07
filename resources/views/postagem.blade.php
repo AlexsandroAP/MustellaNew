@@ -11,7 +11,7 @@
                     <div class="flex flex-col md:flex-row items-start md:space-x-4">
                         <!-- File Input -->
                         <div class="flex items-center justify-center w-full md:w-1/3 rounded-extra-lg bg-purplle px-4 py-20  md:mt-5">
-                            <label for="image" class="flex flex-col items-center justify-center w-full h- rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
+                            <label for="image" class="flex flex-col items-center justify-center w-full h-10rem rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
                                 <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                     <p class="mt-4 text-center text-semibold text-sm text-gray uppercase">Clique ou arraste sua imagem</p>
                                 </div>
@@ -29,7 +29,7 @@
                         </script>
 
                         <!-- título e legenda -->
-                        <div class="flex flex-col w-full md:w-2/3 space-y-4 mt-4 md:mt-0">
+                        <div class="flex flex-col w-full md:w-2/3 space-y-4 mt-4 md:mt-0 md:mt-10">
                             <div>
                                 <label for="title">Title:</label>
                                 <textarea

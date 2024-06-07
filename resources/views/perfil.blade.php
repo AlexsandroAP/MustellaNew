@@ -19,7 +19,7 @@
         <div class="bg-gray-100 text-white">
             
 
-            <main class="pt-10 pb-5 bg-high-purplle border-none fixed top-0 left-0 w-full z-50border-white">
+            <main class="pt-10 pb-5 bg-high-purplle border-none w-full z-50border-white">
             
             <x-addPost></x-addPost>
 
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-4">
+            <div class="md:px-20rem md:mt-3rem mt-10rem grid md:grid-cols-3 gap-4">
                         
                         @foreach($posts as $post)
                             <div class="max-w-sm rounded overflow-hidden shadow-lg sm:m-4">
@@ -84,7 +84,7 @@
                                     ">{{ $post->tags }}</p>
 
                                 </div>
-                                <img class="w-full text-purplle rounded-xl" src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->title }}">
+                                <img class="w-full h-20rem text-purplle rounded-xl" src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->title }}">
                             </div>
                         @endforeach
                     </div>

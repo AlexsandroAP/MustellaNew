@@ -27,7 +27,7 @@
                                     ">{{ $post->caption }}</p>
 
                                 </div>
-                                <img class="w-full text-purplle rounded-xl" src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->title }}">
+                                <img class="w-full md:h-22rem  h-20rem text-purplle rounded-xl" src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->title }}">
                             </div>
                         @endforeach
                     </div>

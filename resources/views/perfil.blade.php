@@ -48,10 +48,12 @@
                                     <div class="flex">
                                     
                                         <p class="text-semibold text-sm text-gray">
-                                            contar post
+                                            {{ $postCount }} Postagens 
                                         </p>
                                     
                                     </div>
+
+                                    <a class="text-white" href="{{ route('profile.edit') }}">Editar perfil</a>
                                     
                                 </div>
                             </div>

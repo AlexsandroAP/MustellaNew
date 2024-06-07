@@ -41,6 +41,7 @@ export default {
         'purplle':'#563274',
         'gray':'#D9D9D9',
         'white':'#ffffff',
+        'black':'#000000',
         'red': '#c1121f',
         'cinza-escuro':'#202C3D',
 

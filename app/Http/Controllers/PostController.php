@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\post;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,9 +21,15 @@ class PostController extends Controller
     public function perfil()
     {
 
+
+        $user = Auth::user();
+        $postCount = $user->posts()->count();
+
         $posts = Post::where('user_id',Auth::id())->get();
-        return view('perfil', compact('posts'));
         
+        return view('perfil', compact('user', 'postCount', 'posts'));
+
+
     }
 
     /**
@@ -80,9 +86,9 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(post $post)
+    public function show(Post $post)
     {
-        //
+        return view('posts-show', compact('post'));
     }
 
     /**
@@ -98,7 +104,27 @@ class PostController extends Controller
      */
     public function update(Request $request, post $post)
     {
-        //
+       
+        $request->validate([
+            'profile_photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        $user = Auth::user();
+
+        if ($request->hasFile('profile_photo')) {
+            // Deletar a foto antiga se existir
+            if ($user->profile_photo) {
+                Storage::delete('public/' . $user->profile_photo);
+            }
+
+            // Armazenar a nova foto
+            $path = $request->file('profile_photo')->store('profile_photos', 'public');
+            $user->profile_photo = $path;
+        }
+
+        $user->save();
+
+        return redirect()->route('profile.show')->with('success', 'Perfil atualizado com sucesso.');
     }
 
     /**

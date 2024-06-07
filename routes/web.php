@@ -39,12 +39,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+    Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+
     Route::get('/mustella', [PostController::class, 'index'])->name('mustella');
 
     Route::get('/perfil', [PostController::class, 'perfil'])->name('perfil');
-
-
-
+   
     Route::get('/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts.search');
 
 });

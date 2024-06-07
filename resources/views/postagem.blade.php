@@ -18,7 +18,8 @@
                                 </div>
                                 <input type="file" id="image" name="image" required class="hidden">
                             </label>
-                            <img id="output" class="" />
+
+                            <img id="output"/>
 
                         </div>
 

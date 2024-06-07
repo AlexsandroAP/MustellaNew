@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
     Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+    Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
     Route::get('/mustella', [PostController::class, 'index'])->name('mustella');
 
